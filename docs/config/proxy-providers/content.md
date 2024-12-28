@@ -1,34 +1,27 @@
-# proxy-providers 文件内容
+proxy-providers:
+  vless_reality_grpc:
+    type: http
+    interval: 3600
+    url: "https://pastebin.com/raw/your-pastebin-link-here"
+    path: ./proxies/vless_reality_grpc.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 
-=== "yaml"
-    ```{.yaml linenums="1"}
-    proxies:
-    - name: "ss1"
-      type: ss
-      server: server
-      port: 443
-      cipher: chacha20-ietf-poly1305
-      password: "password"
-    - name: "ss2"
-      type: ss
-      server: server
-      port: 443
-      cipher: chacha20-ietf-poly1305
-      password: "password"
-    ```
-
-=== "uri"
-    ```{.yaml linenums="1"}
-    ss://YWVzLTI1Ni1nY206bWV0YUAxMjcuMC4wLjE6NDQz#home
-    vmess://eyJhZGQiOiIxMjcuMC4wLjEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMTIyMzQ1Njc4OSIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNDQzIiwicHMiOiJ2bWVzcyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
-    ```
-
-=== "base64"
-    ```{.text linenums="1"}
-    c3M6Ly9ZV1Z6TFRJMU5pMW5ZMjA2YldWMFlVQXhNamN1TUM0d0xqRTZORFF6I2hvbWUKdm1lc3M6Ly9leUpoWkdRaU9pSXhNamN1TUM0d0xqRWlMQ0poYVdRaU9pSXdJaXdpWVd4d2JpSTZJaUlzSW1ad0lqb2lJaXdpYUc5emRDSTZJaUlzSW1sa0lqb2lNVEl5TXpRMU5qYzRPU0lzSW01bGRDSTZJblJqY0NJc0luQmhkR2dpT2lJaUxDSndiM0owSWpvaU5EUXpJaXdpY0hNaU9pSjJiV1Z6Y3lJc0luTmplU0k2SW1GMWRHOGlMQ0p6Ym1raU9pSWlMQ0owYkhNaU9pSWlMQ0owZVhCbElqb2libTl1WlNJc0luWWlPaUl5SW4wPQ==
-    ```
-
-!!! note
-    base64 的 uri 通常为提供商提供给 v2ray/xray 的订阅链接内容
-
-    `YAML`/`uri`/`base64`不可写在同一文件,`uri`/`base64`不需要`proxies:`字段,直接书写即可
+proxies:
+- name: "1d676878-vless_reality_grpc"
+  type: vless
+  server: 104.28.251.182
+  port: 17034
+  uuid: 1d676878-cd95-47d5-9df8-86abe9256867
+  network: grpc
+  tls: true
+  servername: osxapps.itunes.apple.com
+  udp: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: S4RVSg9WZbjVWILgPb_x2j_A1YV1svCuynlo7XhnxkY
+    short-id: 6ba85179e30d4fc2
+  grpc-opts:
+    grpc-service-name: grpc
